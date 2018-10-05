@@ -44,14 +44,14 @@ abstract class TestCase extends Laravel\Lumen\Testing\TestCase
     protected function bookFactory($count = 1)
     {
         $author = factory(\App\Author::class)->create();
-        // $books = factory(\App\Book::class, $count)->make();
+
         if ($count === 1) {
             $book = factory(\App\Book::class)->make();
             $book->author()->associate($author);
             $book->save();
             
             return $book;
-            
+
         } else {
             $books = factory(\App\Book::class, $count)->make();
 
@@ -59,8 +59,8 @@ abstract class TestCase extends Laravel\Lumen\Testing\TestCase
                 $book->author()->associate($author);
                 $book->save();
             });
-        }
 
-        return $books;
+            return $books;
+        }
     }
 }

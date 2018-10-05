@@ -35,6 +35,7 @@ class BooksControllerTest extends TestCase
         $this->get('/books');
 
         $content = json_decode($this->response->getContent(), true);
+        
         $this->assertArrayHasKey('data', $content);
 
         foreach ($books as $book) {
