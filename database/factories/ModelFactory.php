@@ -35,3 +35,12 @@ $factory->define(App\Author::class, function ($faker) {
     ];
 });
     
+$factory->define(\App\Bundle::class, function ($faker) {
+    $title = $faker->sentence(rand(3, 10));
+    
+    return [
+        'title' => substr($title, 0, strlen($title) - 1),
+        'description' => $faker->text
+    ];
+});
+   
