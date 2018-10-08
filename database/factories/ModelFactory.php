@@ -43,4 +43,11 @@ $factory->define(\App\Bundle::class, function ($faker) {
         'description' => $faker->text
     ];
 });
+
+$factory->define(\App\Rating::class, function ($faker) {
+    return [
+        'value' => rand(1, 5)
+    ];
+});
+    
    

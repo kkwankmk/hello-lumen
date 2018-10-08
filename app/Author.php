@@ -12,6 +12,8 @@ class Author extends Model
     * @var array
     */
 
+    use Rateable;
+
     protected $fillable = ['name', 'biography', 'gender'];
     
     public function books()
